@@ -19,11 +19,31 @@
   - [[#author][Author]]
 
 * Description
-Python Google calendar API sample using [quickstart](https://developers.google.com/calendar/quickstart/python).
-
-* Install
+Python Google calendar API sample using [[https://developers.google.com/calendar/quickstart/python][quickstart]].
 
 * Usage
+** Requirements
+- [[https://www.python.org/][python]] - 3.8
+
+*** Quick install
+#+begin_src sh
+# python, pipenv
+yay -S anyenv
+anyenv init
+anyenv install --init
+anyenv install pyenv
+echo 'if which anyenv > /dev/null 2>&1; then eval "$(anyenv init -)"; fi' > ~/.bash_profile
+eval "$(anyenv init -)"
+pyenv install -l
+pyenv install 3.8.6
+pyenv global 3.8.6
+pip install -U pip
+pip install pipenv
+
+# resolve dependency, run it
+pipenv sync
+pipenv run main.py
+#+end_src
 
 * Information
 ** Community
