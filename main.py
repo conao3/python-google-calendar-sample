@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+import click
 import datetime
 import pickle
 import os.path
@@ -7,6 +10,11 @@ from google.auth.transport.requests import Request
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"]
+
+
+@click.group(context_settings=dict(help_option_names=['-h', '--help']))
+def cli():
+    pass
 
 
 def get_credential():
@@ -37,7 +45,8 @@ def get_credential():
     return creds
 
 
-def main():
+@cli.command()
+def fetch():
     """
     Shows basic usage of the Google Calendar API.
     Prints the start and name of the next 10 events on the user's calendar.
@@ -69,5 +78,5 @@ def main():
         print(start, event["summary"])
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    cli()
