@@ -8,7 +8,7 @@ This project provides a command-line interface to fetch and display upcoming eve
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.11+
 - Google Cloud project with Calendar API enabled
 - OAuth 2.0 credentials (`credentials.json`)
 
